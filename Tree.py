@@ -229,5 +229,5 @@ class RBT:
 			return
 		else:
 			self.inorder(tree.left)
-			self.inorder(tree.right)
 			print(tree.val)
+			self.inorder(tree.right)
