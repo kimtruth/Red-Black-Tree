@@ -184,7 +184,7 @@ class RBT:
 
 	def delete(self, z):
 		if not z:
-			return
+			return -1
 		y = z
 		y_origin_color = y.color
 		if not z.left:
@@ -215,7 +215,7 @@ class RBT:
 		if tree == None: tree = self.root
 
 		if not tree:
-			print('[*] search error : %d is not in tree' % (val))
+			#print('[*] search error : %d is not in tree' % (val))
 			return tree
 		if tree.val == val:
 			return tree
@@ -229,5 +229,5 @@ class RBT:
 			return
 		else:
 			self.inorder(tree.left)
-			print(tree.val)
 			self.inorder(tree.right)
+			print(tree.val,tree.color)
