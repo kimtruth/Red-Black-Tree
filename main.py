@@ -1,13 +1,12 @@
 import os
 from Tree import RBT
 
-rbt = RBT()
-
 filenames = os.listdir('./input/')
 for filename in filenames:
+	rbt = RBT()
 	print ('filename=', filename)
 	txt = open('./input/' + filename).read()
-	datas = list(map(int, txt.split('\n')))
+	datas = list(map(int, txt.split('\n')[:-1]))
 
 	insert = 0
 	delete = 0
@@ -31,5 +30,4 @@ for filename in filenames:
 	print('miss = ', miss)
 	print('nb =', rbt.black_node_count())
 	print('bh =', rbt.black_height())
-
 	rbt.inorder(rbt.root)
