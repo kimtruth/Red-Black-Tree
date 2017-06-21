@@ -3,10 +3,10 @@ from Tree import RBT
 
 
 rbt = RBT()
-txt = open('input.txt').read()
+txt = open('test01.txt').read()
 datas = list(map(int, txt.split('\n')[:-1]))
 
-txt = open('search.txt').read()
+txt = open('search01.txt').read()
 searchs = list(map(int, txt.split('\n')[:-1]))
 
 insert = 0
@@ -28,8 +28,10 @@ for data in datas:
 a = rbt.inorderTraversal(rbt.root)
 a = ['NIL', 'NIL'] + a + ['NIL', 'NIL']
 
-f = open('output.txt', 'w')
+f = open('output01.txt', 'w')
 for d in searchs:
+	if d == 0:
+		break
 	for i in range(2, len(a) - 2):
 		if d == a[i]:
 			f.write(' '.join(map(str, a[i-1:i+2])) + '\n')
